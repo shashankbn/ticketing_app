@@ -31,13 +31,14 @@ const OrderShow = ({ order, currentUser }) => {
   if (timeLeft < 0) {
     return <div>Order Expired</div>;
   }
-
+  // stripeKey={process.env.STRIPE_KEY}
+  
   return (
     <div>
       Time left to pay: {timeLeft} seconds
       <StripeCheckout
         token={({ id }) => doRequest({ token: id })}
-        stripeKey={process.env.stripeKey}
+        stripeKey='pk_test_ac3wLdbcCUTbtSeKsUaBJVn1'
         amount={order.ticket.price * 100}
         email={currentUser.email}
       />

@@ -4,10 +4,10 @@ export default ({ req }) => {
   if (typeof window === 'undefined') {
     // We are on the server
 
+    //prod - baseURL:'http://www.ticketing-app-dev.xyz/'
     return axios.create({
-      baseURL:'http://www.ticketing-app-dev.xyz/',
-      //baseURL: 'http://ingress-nginx-controller.ingress-nginx.svc.cluster.local',
-      //baseURL: 'http://192.168.64.5',
+      // baseURL: 'http://ingress-nginx-controller.ingress-nginx.svc.cluster.local',
+      baseURL: 'http://192.168.64.5',
       headers: req.headers
     });
   } else {

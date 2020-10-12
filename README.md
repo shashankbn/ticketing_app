@@ -10,3 +10,8 @@
 	8. Skaffold dev
 	9. Minikube tunnel - OPTIONAL
 
+# For PROD
+	1. kubectl create secret generic stripe-secret --from-literal=STRIPE_KEY=<SecretKeyInTestMode>
+	2. create ingress controller specific to provider eg: DigitalOcean 
+
+
